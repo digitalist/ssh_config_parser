@@ -1,0 +1,390 @@
+#chmod u+rw,o-rw,g-rw key
+HashKnownHosts no
+host 192.168.0.153
+user ubuntu
+PubkeyAuthentication yes
+IdentityFile ~/.ssh/some_org_gitlab
+
+# good to see you
+VisualHostKey yes
+
+# host-based configuration
+
+Host ironclad
+  Hostname ironclad
+  StrictHostKeyChecking no
+  User some_user
+  PubkeyAuthentication yes
+  IdentityFile ~/.ssh/burrito2.pem
+
+Host ubuserver
+  
+#Hostname 192.168.0.2
+hostname ubuserver
+  
+# default godaddy dns is 192.168.0.3
+User some_user
+  IdentityFile ~/.ssh/default_ec2_key
+  IdentitiesOnly yes
+
+Host localhost
+  Hostname localhost
+  StrictHostKeyChecking no
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/ideapad2some_org_works
+  PubkeyAuthentication yes
+  User some_user
+
+#	IdentityFile ~/.ssh/strangeqargo_mydomain_ru
+#   	IdentityFile ~/.ssh/github
+Host github.com
+  user strangeqargo@gmail.com
+  PubkeyAuthentication yes
+  IdentityFile ~/.ssh/github
+
+Host git.mydomain.ru
+  Hostname git.mydomain.ru
+  user git
+  PubkeyAuthentication yes
+  HostKeyAlias git.mydomain.ru
+  IdentityFile ~/.ssh/git_mydomain_ru
+  ServerAliveInterval 60
+  Port 22
+  IdentitiesOnly yes
+
+#LogLevel DEBUG3
+Host mydomain.ru
+  Hostname mydomain.ru
+  HostKeyAlias mydomain.ru
+  PubkeyAuthentication yes
+  IdentityFile ~/.ssh/strangeqargo_mydomain_ru
+  ServerAliveInterval 60
+  CheckHostIP no
+  Port 2046
+  User some_user
+
+Host howitzer.mydomain.ru
+  User some_user
+  hostname howitzer.mydomain.ru
+  
+#HostKeyAlias howitzer.mydomain.ru
+PubkeyAuthentication yes
+  IdentityFile ~/.ssh/howitzer_kore
+  ServerAliveInterval 60
+  port 1022
+  IdentitiesOnly yes
+
+Host strangeqargo.net
+  
+#Hostname 192.168.0.4
+hostname strangeqargo.net
+  
+# default godaddy dns is 192.168.0.5
+User ubuntu
+  IdentityFile ~/.ssh/burrito2.pem
+  IdentitiesOnly yes
+  ServerAliveInterval 60
+  CheckHostIP no
+
+Host works
+  hostname 192.168.0.7
+  user VasyaPetya
+  IdentityFile ~/.ssh/some_org_works
+  IdentitiesOnly yes
+
+Host masha
+  hostname 192.168.0.8
+  User some_user
+  
+#IdentityFile ~/.ssh/
+#IdentitiesOnly yes
+PubkeyAuthentication no
+
+Host felsher
+  hostname 10.9.0.7
+  user felsher
+  
+#IdentityFile ~/.ssh/
+IdentitiesOnly no
+  PreferredAuthentications password
+  PubkeyAuthentication no
+
+Host 192.168.0.103
+  User some_user
+  hostname 192.168.0.103
+  
+#HostKeyAlias howitzer.mydomain.ru
+PubkeyAuthentication yes
+  IdentityFile ~/.ssh/phenom2
+  ServerAliveInterval 60
+  port 22
+  IdentitiesOnly yes
+
+Host bitbucket.org
+  IdentityFile ~/.ssh/bitbucket_rsa
+
+####VPN
+Host some_org_works
+  Hostname 10.9.0.4
+  User VasyaPetya
+  PubkeyAuthentication yes
+  IdentitiesOnly yes
+  ServerAliveInterval 60
+  IdentityFile ~/.ssh/ideapad2some_org_works
+
+Host ideapad
+  Hostname 10.9.0.5
+  User some_user
+  PubkeyAuthentication yes
+  IdentitiesOnly yes
+  ServerAliveInterval 60
+  IdentityFile ~/.ssh/ideapad2some_org_works
+  StrictHostKeyChecking no
+
+#sed -n '/#START_OFFICE_NOTEBOOK/{p;:a;N;/#END_OFFICE_NOTEBOOK/!ba;s/.*\n/REPLACEMENT\n/};p' file
+#ssh ideapad /home/user/bin/getaddr wlp2s0
+Host wifi-ideapad
+  Hostname 192.168.0.145
+  User some_user
+  PubkeyAuthentication yes
+  IdentitiesOnly yes
+  ServerAliveInterval 60
+  IdentityFile ~/.ssh/ideapad2some_org_works
+
+Host mydomain
+  Hostname 10.9.0.1
+  HostKeyAlias mydomain.ru
+  PubkeyAuthentication yes
+  IdentityFile ~/.ssh/strangeqargo_mydomain_ru
+  CheckHostIP no
+  Port 2046
+  User some_user
+
+####/VPN
+########################################################### some_org
+Host gitlab.some_org.net
+  Hostname gitlab.some_org.net
+  User git
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/some_org_gitlab
+  PubkeyAuthentication yes
+
+########################################################## /some_org
+Host _build
+  Hostname 192.168.0.9
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _cn3
+  Hostname 192.168.0.10
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _cn4
+  Hostname 192.168.0.11
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _dev2
+  Hostname 192.168.0.12
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/some_orgdev-29-09-17.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _dev3
+  Hostname 192.168.0.13
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/some_orgdev-29-09-17.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _ec1
+  Hostname 192.168.0.14
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _ec2
+  Hostname 192.168.0.17
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _ec3
+  Hostname 192.168.0.18
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _ga-updater
+  Hostname 192.168.0.19
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _gitlab
+  Hostname 192.168.0.20
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _gitlab2
+  Hostname 192.168.0.21
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _log1
+  Hostname 192.168.0.22
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _log3
+  Hostname 192.168.0.23
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2014.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _mng1
+  Hostname 192.168.0.24
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _mng3
+  Hostname 192.168.0.25
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _mng4
+  Hostname 192.168.0.25
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _mon
+  Hostname 192.168.0.25
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _postback-gw
+  Hostname 192.168.0.27
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _castle1
+  Hostname 192.168.0.29
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _castle2
+  Hostname 192.168.0.30
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _smallweb
+  Hostname 192.168.0.31
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _zulu-projections
+  Hostname 192.168.0.32
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _zulu-updater
+  Hostname 192.168.0.33
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _virtual-api
+  Hostname 192.168.0.34
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/some_orgdev-29-09-17.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _uk-updater
+  Hostname 192.168.0.35
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _mng5
+  Hostname 192.168.0.36
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod2017.pem
+  PubkeyAuthentication yes
+  StrictHostKeyChecking no
+
+Host _crm
+  Hostname 192.168.0.37
+  User ubuntu
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/prod29-09-2017.pem
+  
+# IdentityFile ~/.ssh/prod2017.pem
+PubkeyAuthentication yes
+  StrictHostKeyChecking no
+  ServerAliveInterval 60
