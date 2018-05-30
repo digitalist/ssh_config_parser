@@ -45,11 +45,8 @@ class Host
 
 
         $buf[] = SSHParser::$keywords['HostKeyword'] ."  ". implode(" ", $this->hostnames);
-        print_r($this->hostnames);
         foreach ($this->params as $k=>$param){
             $buf[].="\t".$param;
-
-            //$buf[] .= implode(" ", $param);
         }
         return implode("\n", $buf);
     }
