@@ -22,4 +22,4 @@
 
 Nothing OOP-fancy here, no traits or something
 
-"Canonical" PHP code seems to be a bit more heavy then golang version.
+"Canonical" PHP code seems to be a bit more heavy than golang version.
